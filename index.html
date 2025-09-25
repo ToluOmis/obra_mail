@@ -156,19 +156,11 @@
 
               <!-- Gift text -->
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <!-- Desktop version -->
-                <tr class="desktop-only">
-                  <td class="mobile-text-override" style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;color:#000000!important;line-height:1.5!important;padding:0 0 18px 0!important;">
-                    <strong style="font-weight:700!important;color:#000000!important;">На знак вдячності ми підготували для тебе невеликий подарунок — збірку<br>
-                    корисних і надихаючих матеріалів.</strong> Нехай він стане приємним доповненням до<br>
+                <tr>
+                  <td class="mobile-gift-text mobile-text-override" style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;color:#000000!important;line-height:1.5!important;padding:0 0 18px 0!important;">
+                    <strong style="font-weight:700!important;color:#000000!important;">На знак вдячності ми підготували для тебе невеликий подарунок — збірку<br class="desktop-only">
+                    корисних і надихаючих матеріалів.</strong> Нехай він стане приємним доповненням до<br class="desktop-only">
                     твого дослідження себе й навколишнього світу.
-                  </td>
-                </tr>
-                
-                <!-- Mobile version -->
-                <tr class="mobile-only">
-                  <td class="mobile-text-override" style="font-family:'OpenSans',Arial,sans-serif!important;font-size:14px!important;color:#000000!important;line-height:1.6!important;padding:0 0 18px 0!important;">
-                    <strong style="font-weight:700!important;color:#000000!important;">На знак вдячності ми підготували для тебе невеликий подарунок — збірку корисних і надихаючих матеріалів.</strong> Нехай він стане приємним доповненням до твого дослідження себе й навколишнього світу.
                   </td>
                 </tr>
               </table>
@@ -246,6 +238,11 @@
       .mobile-font-closing {
         font-size: 16px !important;
         line-height: 1.4 !important;
+      }
+      
+      .mobile-gift-text {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
       }
       
       .mobile-button-container {
