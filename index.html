@@ -7,16 +7,6 @@
   <!--[if !mso]><!-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!--<![endif]-->
-  <!--[if mso]>
-  <noscript>
-    <xml>
-      <o:OfficeDocumentSettings>
-        <o:AllowPNG/>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-      </o:OfficeDocumentSettings>
-    </xml>
-  </noscript>
-  <![endif]-->
   <style>
     /* Import custom fonts from GitHub */
     @font-face {
@@ -44,350 +34,200 @@
       margin: 0 !important; 
       padding: 0 !important; 
       background-color: #698595 !important; 
-      font-family: 'OpenSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+      font-family: 'OpenSans', Arial, sans-serif !important;
       font-weight: 400;
       -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-      height: 100% !important;
     }
     
     table {
-      border-collapse: collapse;
-      mso-table-lspace: 0pt;
-      mso-table-rspace: 0pt;
+      border-collapse: collapse !important;
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
     }
     
     img {
-      border: 0;
-      height: auto;
-      line-height: 100%;
-      outline: none;
-      text-decoration: none;
-      -ms-interpolation-mode: bicubic;
-    }
-    
-    /* Gmail specific background fix */
-    .gmail-blend-screen { background-color: #698595 !important; }
-    .gmail-blend-difference { background-color: #698595 !important; }
-    
-    /* Force background color in all email clients */
-    [data-ogsc] { background-color: #698595 !important; }
-    
-    .main-container {
-      width: 100% !important;
-      background-color: #698595 !important;
-      height: 980px !important;
-      max-height: 980px !important;
-      overflow: hidden !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-    }
-    
-    .content-wrapper {
-      background-color: #698595 !important;
-      width: 600px !important;
-      max-width: 600px !important;
-      height: 980px !important;
-      max-height: 980px !important;
-      margin: 0 auto !important;
-      padding: 40px !important;
-      box-sizing: border-box !important;
-      overflow: hidden !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: flex-start !important;
-    }
-    
-    .header {
-      width: 100%;
-      margin-bottom: 25px;
-    }
-    
-    .header-table {
-      width: 100%;
-    }
-    
-    .logo-left, .logo-right {
-      background: #2c3e50;
-      color: white !important;
-      padding: 8px 16px;
-      font-family: 'OpenSans', Arial, sans-serif !important;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      display: inline-block;
-    }
-    
-    .logo-left {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-    
-    .logo-right {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    }
-    
-    h1 {
-      font-family: 'OpenSans', Arial, sans-serif !important;
-      font-size: 32px !important;
-      font-weight: 700 !important;
-      margin: 0 0 18px 0 !important;
-      color: #000000 !important;
-      line-height: 1.1 !important;
-      letter-spacing: -0.5px;
-    }
-    
-    p {
-      font-family: 'OpenSans', Arial, sans-serif !important;
-      font-size: 11px !important;
-      line-height: 1.5 !important;
-      margin: 0 0 12px 0 !important;
-      color: #000000 !important;
-      font-weight: 400 !important;
-    }
-    
-    .bold-text {
-      font-weight: 700 !important;
-    }
-    
-    .button {
-      display: inline-block !important;
-      background-color: #DBB128 !important;
-      color: #000000 !important;
-      width: 222px !important;
-      height: 38px !important;
-      padding: 0 !important;
+      border: 0 !important;
+      height: auto !important;
+      line-height: 100% !important;
+      outline: none !important;
       text-decoration: none !important;
-      font-family: 'OpenSans', Arial, sans-serif !important;
-      font-weight: 700 !important;
-      font-size: 13px !important;
-      margin: 18px 0 20px 0 !important;
-      border-radius: 0 !important;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border: none !important;
-      mso-hide: all;
-      text-align: center !important;
-      line-height: 38px !important;
-      box-sizing: border-box !important;
+      -ms-interpolation-mode: bicubic !important;
     }
-    
-    .button:hover {
-      background-color: #c49d24 !important;
-    }
-    
-    .closing {
-      font-family: 'OpenSans', Arial, sans-serif !important;
-      font-size: 14px !important;
-      font-weight: 700 !important;
-      margin: 8px 0 !important;
-      color: #000000 !important;
-      line-height: 1.4 !important;
-    }
-    
-    .art-placeholder {
-      text-align: center;
-      margin-top: 25px;
-      flex-shrink: 0;
-    }
-    
-    .art-element {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-      border-radius: 50%;
-      position: relative;
-    }
-    
-    .art-element::before {
-      content: 'OBRA';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-family: 'OpenSans', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      letter-spacing: 2px;
-    }
-    
-    /* Mobile styles */
-    @media screen and (max-width: 600px) {
-      .main-container {
-        width: 100% !important;
-        height: 100vh !important;
-        max-height: none !important;
-      }
-      
-      .content-wrapper {
-        width: 100% !important;
-        height: 100% !important;
-        max-height: none !important;
-        padding: 20px 15px !important;
-        overflow-y: auto !important;
-      }
-      
-      h1 {
-        font-size: 36px !important;
-        margin-bottom: 20px !important;
-        line-height: 1.1 !important;
-      }
-      
-      p {
-        font-size: 12px !important;
-        line-height: 1.7 !important;
-        margin-bottom: 14px !important;
-      }
-      
-      /* Hide desktop line breaks on mobile */
-      p br {
-        display: none !important;
-      }
-      
-      .button {
-        width: 222px !important;
-        height: 38px !important;
-        font-size: 13px !important;
-        padding: 0 !important;
-        margin: 18px 0 20px 0 !important;
-        line-height: 38px !important;
-      }
-      
-      .closing {
-        font-size: 16px !important;
-        line-height: 1.5 !important;
-      }
-      
-      .logo-left, .logo-right {
-        font-size: 12px !important;
-        padding: 10px 18px !important;
-      }
-      
-      .art-element {
-        width: 100px !important;
-        height: 100px !important;
-      }
-      
-      .art-element::before {
-        font-size: 20px !important;
-      }
-    }
-    
-    /* Outlook specific */
-    <!--[if mso]>
-    h1 { font-family: Arial, sans-serif !important; }
-    p { font-family: Arial, sans-serif !important; }
-    .button { font-family: Arial, sans-serif !important; }
-    .closing { font-family: Arial, sans-serif !important; }
-    <![endif]-->
   </style>
 </head>
-<body>
-  <!--[if mso | IE]>
-  <table align="center" border="0" cellpadding="0" cellspacing="0" class="main-container-outlook" style="width:600px;height:980px;background-color:#698595;" width="600" height="980" bgcolor="#698595">
-    <tr>
-      <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;background-color:#698595;vertical-align:top;padding:40px;" bgcolor="#698595" valign="top">
-  <![endif]-->
+<body style="margin:0!important;padding:0!important;background-color:#698595!important;">
   
-  <div class="main-container" style="background-color: #698595 !important;" bgcolor="#698595">
-    <div class="content-wrapper" style="background-color: #698595 !important;" bgcolor="#698595">
-      <!-- Header with logos -->
-      <div class="header">
-        <table class="header-table" cellpadding="0" cellspacing="0" border="0">
+  <!-- Main wrapper table for email clients -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#698595!important;margin:0!important;padding:0!important;">
+    <tr>
+      <td align="center" valign="top" style="background-color:#698595!important;padding:0!important;">
+        
+        <!-- Content table with fixed width -->
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#698595!important;max-width:600px!important;">
           <tr>
-            <td align="left" valign="top">
-              <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Marta%20Sighnature_logo_black.png" 
-                   alt="Marta Syrko" style="max-width: 109px; height: auto; display: block;" width="109">
-            </td>
-            <td align="right" valign="top">
-              <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra_logo_black%20(1).png" 
-                   alt="OBRA" style="max-width: 56px; height: auto; display: block;" width="56">
+            <td style="background-color:#698595!important;padding:40px!important;">
+              
+              <!-- Header with logos -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:25px!important;">
+                <tr>
+                  <td align="left" valign="top">
+                    <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Marta%20Sighnature_logo_black.png" 
+                         alt="Marta Syrko" width="109" height="auto" 
+                         style="display:block!important;max-width:109px!important;height:auto!important;">
+                  </td>
+                  <td align="right" valign="top">
+                    <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra_logo_black%20(1).png" 
+                         alt="OBRA" width="56" height="auto" 
+                         style="display:block!important;max-width:56px!important;height:auto!important;">
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Title -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:32px!important;font-weight:700!important;color:#000000!important;line-height:1.1!important;margin:0!important;padding:0 0 18px 0!important;">
+                    <strong style="font-weight:700!important;">Привіт від Марти Сирко</strong>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Main content -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;font-weight:400!important;color:#000000!important;line-height:1.5!important;padding:0 0 12px 0!important;">
+                    Дякую за твою довіру та навчання на курсі «Художнє бачення». Це був<br>
+                    важливий етап — і я дуже ціную, що ти є його частиною.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;font-weight:400!important;color:#000000!important;line-height:1.5!important;padding:0 0 12px 0!important;">
+                    Зараз ми разом з командою створюємо новий простір — школу OBRA.<br>
+                    OBRA — це простір, де формується художнє бачення і народжується власна<br>
+                    мова — візуальна, художня, концептуальна. Це більше, ніж навчання ремеслу<br>
+                    — це шлях до того, щоб сказати своє через мистецтво.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;font-weight:400!important;color:#000000!important;line-height:1.5!important;padding:0 0 12px 0!important;">
+                    Дуже скоро ми поділимося офіційним анонсом школи, розповімо більше й<br>
+                    покажемо, як саме все влаштовано. А поки ми готуємо нові навчальні<br>
+                    програми, зокрема курс «Сила образу».
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;font-weight:400!important;color:#000000!important;line-height:1.5!important;padding:0 0 12px 0!important;">
+                    Нам справді важливо почути твій досвід.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;font-weight:400!important;color:#000000!important;line-height:1.5!important;padding:0 0 12px 0!important;">
+                    Розкажи, що було цінним у «Художньому баченні», які труднощі виникали, а<br>
+                    також які теми та формати тобі цікаві у наступних курсах.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;font-weight:400!important;color:#000000!important;line-height:1.5!important;padding:0 0 18px 0!important;">
+                    Опитування займе кілька хвилин, а твої відповіді допоможуть нам створити<br>
+                    простір, який справді резонуватиме з твоїми потребами й інтересами.
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Button -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding:0 0 20px 0!important;">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="background-color:#DBB128!important;width:222px!important;height:38px!important;">
+                          <a href="https://n8m7kf9e.forms.app/feedback-hudozhnie-bachennia" 
+                             target="_blank" 
+                             style="display:block!important;width:222px!important;height:38px!important;background-color:#DBB128!important;color:#000000!important;font-family:'OpenSans',Arial,sans-serif!important;font-size:13px!important;font-weight:700!important;text-decoration:none!important;text-align:center!important;line-height:38px!important;text-transform:uppercase!important;letter-spacing:1px!important;">
+                            ПРОЙТИ ОПИТУВАННЯ
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Gift text -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:11px!important;color:#000000!important;line-height:1.5!important;padding:0 0 18px 0!important;">
+                    <strong style="font-weight:700!important;">На знак вдячності ми підготували для тебе невеликий подарунок — збірку<br>
+                    корисних і надихаючих матеріалів.</strong> Нехай він стане приємним доповненням до<br>
+                    твого дослідження себе й навколишнього світу.
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Closing message -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:14px!important;font-weight:700!important;color:#000000!important;line-height:1.4!important;padding:8px 0!important;">
+                    <strong style="font-weight:700!important;">Дякую, що ти поруч. Творимо OBRA разом</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'OpenSans',Arial,sans-serif!important;font-size:14px!important;font-weight:700!important;color:#000000!important;line-height:1.4!important;padding:8px 0 25px 0!important;">
+                    <strong style="font-weight:700!important;">З теплом,<br>
+                    Марта та команда OBRA</strong>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Bottom Art Element -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="padding:0!important;">
+                    <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra%20Head_logo_black.png" 
+                         alt="OBRA Art" width="123" height="auto" 
+                         style="display:inline-block!important;max-width:123px!important;height:auto!important;">
+                  </td>
+                </tr>
+              </table>
+              
             </td>
           </tr>
         </table>
-      </div>
-
-      <!-- Title -->
-      <h1>Привіт від Марти Сирко</h1>
-
-      <!-- Main text content -->
-      <p>
-        Дякую за твою довіру та навчання на курсі «Художнє бачення». Це був<br>
-        важливий етап — і я дуже ціную, що ти є його частиною.
-      </p>
-
-      <p>
-        Зараз ми разом з командою створюємо новий простір — школу OBRA.<br>
-        OBRA — це простір, де формується художнє бачення і народжується власна<br>
-        мова — візуальна, художня, концептуальна. Це більше, ніж навчання ремеслу<br>
-        — це шлях до того, щоб сказати своє через мистецтво.
-      </p>
-
-      <p>
-        Дуже скоро ми поділимося офіційним анонсом школи, розповімо більше й<br>
-        покажемо, як саме все влаштовано. А поки ми готуємо нові навчальні<br>
-        програми, зокрема курс «Сила образу».
-      </p>
-
-      <p>
-        Нам справді важливо почути твій досвід.
-      </p>
-
-      <p>
-        Розкажи, що було цінним у «Художньому баченні», які труднощі виникали, а<br>
-        також які теми та формати тобі цікаві у наступних курсах.
-      </p>
-
-      <p>
-        Опитування займе кілька хвилин, а твої відповіді допоможуть нам створити<br>
-        простір, який справді резонуватиме з твоїми потребами й інтересами.
-      </p>
-
-      <!-- Button -->
-      <!--[if mso]>
-      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://n8m7kf9e.forms.app/feedback-hudozhnie-bachennia" style="height:38px;v-text-anchor:middle;width:222px;" arcsize="0%" stroke="f" fillcolor="#DBB128">
-        <w:anchorlock/>
-        <center style="color:#000000;font-family:Arial, sans-serif;font-size:13px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;">ПРОЙТИ ОПИТУВАННЯ</center>
-      </v:roundrect>
-      <![endif]-->
-      <!--[if !mso]><!-->
-      <a href="https://n8m7kf9e.forms.app/feedback-hudozhnie-bachennia" target="_blank" class="button">
-        ПРОЙТИ ОПИТУВАННЯ
-      </a>
-      <!--<![endif]-->
-
-      <!-- Gift text -->
-      <p>
-        <span class="bold-text">На знак вдячності ми підготували для тебе невеликий подарунок — збірку<br>
-        корисних і надихаючих матеріалів.</span> Нехай він стане приємним доповненням до<br>
-        твого дослідження себе й навколишнього світу.
-      </p>
-
-      <!-- Closing message -->
-      <p class="closing">
-        Дякую, що ти поруч. Творимо OBRA разом
-      </p>
-
-      <p class="closing">
-        З теплом,<br>
-        Марта та команда OBRA
-      </p>
-
-      <!-- Bottom Art Element -->
-      <div class="art-placeholder">
-        <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra%20Head_logo_black.png" 
-             alt="OBRA Art" style="max-width: 123px; height: auto; display: inline-block;" width="123">
-      </div>
-    </div>
-  </div>
-
-  <!--[if mso | IE]>
+        
       </td>
     </tr>
   </table>
-  <![endif]-->
+
+  <!-- Mobile responsive styles -->
+  <style>
+    @media screen and (max-width: 600px) {
+      .mobile-padding {
+        padding: 20px 15px !important;
+      }
+      
+      .mobile-font-large {
+        font-size: 36px !important;
+      }
+      
+      .mobile-font-medium {
+        font-size: 12px !important;
+        line-height: 1.7 !important;
+      }
+      
+      .mobile-font-button {
+        font-size: 14px !important;
+      }
+      
+      .mobile-font-closing {
+        font-size: 16px !important;
+      }
+      
+      .mobile-hide-br br {
+        display: none !important;
+      }
+    }
+  </style>
+
 </body>
 </html>
