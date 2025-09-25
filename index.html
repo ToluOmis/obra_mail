@@ -4,8 +4,36 @@
   <meta charset="UTF-8">
   <title>OBRA Email</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--<![endif]-->
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
   <style>
-    /* Все стили встроены локально, без внешних зависимостей */
+    /* Import custom fonts from GitHub */
+    @font-face {
+      font-family: 'OpenSans';
+      src: url('https://raw.githubusercontent.com/ToluOmis/obra_mail/main/open-sans.regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'OpenSans';
+      src: url('https://raw.githubusercontent.com/ToluOmis/obra_mail/main/open-sans.bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    
+    /* Email reset styles */
     * {
       margin: 0;
       padding: 0;
@@ -13,45 +41,63 @@
     }
     
     body { 
-      margin: 0; 
-      padding: 0; 
-      background-color: #6A8596; 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      margin: 0 !important; 
+      padding: 0 !important; 
+      background-color: #6A8596 !important; 
+      font-family: 'OpenSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
       font-weight: 400;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
     }
     
     .main-container {
-      width: 100%;
-      background-color: #6A8596;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100% !important;
+      background-color: #6A8596 !important;
       min-height: 100vh;
-      padding: 20px;
     }
     
     .content-wrapper {
-      background-color: #6A8596;
+      background-color: #6A8596 !important;
       width: 100%;
       max-width: 600px;
+      margin: 0 auto;
       padding: 40px;
     }
     
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      width: 100%;
       margin-bottom: 30px;
+    }
+    
+    .header-table {
+      width: 100%;
     }
     
     .logo-left, .logo-right {
       background: #2c3e50;
-      color: white;
+      color: white !important;
       padding: 12px 24px;
-      border-radius: 4px;
+      font-family: 'OpenSans', Arial, sans-serif !important;
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-block;
     }
     
     .logo-left {
@@ -63,54 +109,56 @@
     }
     
     h1 {
-      font-size: 28px;
-      font-weight: 700;
-      margin: 0 0 20px 0;
-      color: #000000;
-      line-height: 1.2;
+      font-family: 'OpenSans', Arial, sans-serif !important;
+      font-size: 36px !important;
+      font-weight: 700 !important;
+      margin: 0 0 20px 0 !important;
+      color: #000000 !important;
+      line-height: 1.2 !important;
       letter-spacing: -0.5px;
     }
     
     p {
-      font-size: 13px;
-      line-height: 1.7;
-      margin: 0 0 14px 0;
-      color: #000000;
-      font-weight: 400;
+      font-family: 'OpenSans', Arial, sans-serif !important;
+      font-size: 12px !important;
+      line-height: 1.7 !important;
+      margin: 0 0 14px 0 !important;
+      color: #000000 !important;
+      font-weight: 400 !important;
     }
     
     .bold-text {
-      font-weight: 700;
+      font-weight: 700 !important;
     }
     
     .button {
-      display: inline-block;
-      background-color: #DBB128;
-      color: #000000;
-      padding: 14px 45px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 12px;
-      margin: 20px 0 25px 0;
-      transition: all 0.3s ease;
-      border-radius: 3px;
+      display: inline-block !important;
+      background-color: #DBB128 !important;
+      color: #000000 !important;
+      padding: 14px 45px !important;
+      text-decoration: none !important;
+      font-family: 'OpenSans', Arial, sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      margin: 20px 0 25px 0 !important;
+      border-radius: 0 !important;
       text-transform: uppercase;
       letter-spacing: 1px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border: none !important;
+      mso-hide: all;
     }
     
     .button:hover {
-      background-color: #c49d24;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      background-color: #c49d24 !important;
     }
     
     .closing {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 10px 0;
-      color: #000000;
-      line-height: 1.5;
+      font-family: 'OpenSans', Arial, sans-serif !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      margin: 10px 0 !important;
+      color: #000000 !important;
+      line-height: 1.5 !important;
     }
     
     .art-placeholder {
@@ -125,7 +173,6 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
       border-radius: 50%;
       position: relative;
-      animation: pulse 3s ease-in-out infinite;
     }
     
     .art-element::before {
@@ -135,118 +182,89 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
+      font-family: 'OpenSans', Arial, sans-serif;
       font-weight: 700;
       font-size: 24px;
       letter-spacing: 2px;
     }
     
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.05);
-        opacity: 0.9;
-      }
-    }
-    
-    /* Изображения с GitHub */
-    .header img {
-      max-height: 40px;
-      width: auto;
-      display: block;
-    }
-    
-    .art-placeholder img {
-      max-width: 120px;
-      height: auto;
-      display: inline-block;
-    }
-    
-    /* Медиа запросы */
+    /* Mobile styles */
     @media screen and (max-width: 600px) {
       .content-wrapper {
-        padding: 20px 15px;
-        max-width: 100%;
+        padding: 20px 15px !important;
+        max-width: 100% !important;
       }
       
       h1 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        line-height: 1.1;
+        font-size: 36px !important;
+        margin-bottom: 20px !important;
+        line-height: 1.1 !important;
       }
       
       p {
-        font-size: 16px;
-        line-height: 1.4;
-        margin-bottom: 18px;
+        font-size: 12px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 14px !important;
       }
       
       .button {
-        font-size: 14px;
-        padding: 16px 50px;
-        margin: 25px 0 30px 0;
+        font-size: 14px !important;
+        padding: 14px 45px !important;
+        margin: 20px 0 25px 0 !important;
       }
       
       .closing {
-        font-size: 16px;
-        line-height: 1.4;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
       }
       
       .logo-left, .logo-right {
-        font-size: 12px;
-        padding: 10px 18px;
+        font-size: 12px !important;
+        padding: 10px 18px !important;
       }
       
       .art-element {
-        width: 100px;
-        height: 100px;
+        width: 100px !important;
+        height: 100px !important;
       }
       
       .art-element::before {
-        font-size: 20px;
+        font-size: 20px !important;
       }
     }
     
-    @media screen and (max-width: 480px) {
-      .content-wrapper {
-        padding: 20px 15px;
-      }
-      
-      h1 {
-        font-size: 26px;
-        line-height: 1.1;
-      }
-      
-      p {
-        font-size: 16px;
-        line-height: 1.4;
-      }
-      
-      .button {
-        font-size: 14px;
-        padding: 16px 45px;
-      }
-      
-      .closing {
-        font-size: 16px;
-      }
-      
-      .logo-left, .logo-right {
-        font-size: 12px;
-        padding: 10px 18px;
-      }
-    }
+    /* Outlook specific */
+    <!--[if mso]>
+    h1 { font-family: Arial, sans-serif !important; }
+    p { font-family: Arial, sans-serif !important; }
+    .button { font-family: Arial, sans-serif !important; }
+    .closing { font-family: Arial, sans-serif !important; }
+    <![endif]-->
   </style>
 </head>
 <body>
+  <!--[if mso | IE]>
+  <table align="center" border="0" cellpadding="0" cellspacing="0" class="main-container-outlook" style="width:600px;" width="600" bgcolor="#6A8596">
+    <tr>
+      <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+  <![endif]-->
+  
   <div class="main-container">
     <div class="content-wrapper">
-      <!-- Header with styled placeholders -->
+      <!-- Header with logos -->
       <div class="header">
-        <div class="logo-left">Marta Syrko</div>
-        <div class="logo-right">OBRA</div>
+        <table class="header-table" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td align="left" valign="top">
+              <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Marta%20Sighnature_logo_black.png" 
+                   alt="Marta Syrko" style="max-width: 109px; height: auto; display: block;" width="109">
+            </td>
+            <td align="right" valign="top">
+              <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra_logo_black%20(1).png" 
+                   alt="OBRA" style="max-width: 56px; height: auto; display: block;" width="56">
+            </td>
+          </tr>
+        </table>
       </div>
 
       <!-- Title -->
@@ -286,9 +304,17 @@
       </p>
 
       <!-- Button -->
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://n8m7kf9e.forms.app/feedback-hudozhnie-bachennia" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="0%" stroke="f" fillcolor="#DBB128">
+        <w:anchorlock/>
+        <center style="color:#000000;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;">ПРОЙТИ ОПИТУВАННЯ</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
       <a href="https://n8m7kf9e.forms.app/feedback-hudozhnie-bachennia" target="_blank" class="button">
         ПРОЙТИ ОПИТУВАННЯ
       </a>
+      <!--<![endif]-->
 
       <!-- Gift text -->
       <p>
@@ -309,39 +335,16 @@
 
       <!-- Bottom Art Element -->
       <div class="art-placeholder">
-        <div class="art-element"></div>
+        <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra%20Head_logo_black.png" 
+             alt="OBRA Art" style="max-width: 123px; height: auto; display: inline-block;" width="123">
       </div>
     </div>
   </div>
 
-  <!-- Попытка загрузить изображения после загрузки страницы -->
-  <script>
-    // Этот скрипт попытается загрузить изображения, если страница открыта не в Claude
-    window.addEventListener('load', function() {
-      // Проверяем, можем ли мы загружать внешние ресурсы
-      const testImg = new Image();
-      testImg.onload = function() {
-        // Если изображение загрузилось, заменяем плейсхолдеры
-        const header = document.querySelector('.header');
-        if (header) {
-          header.innerHTML = `
-            <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Marta%20Sighnature_logo_black.png" 
-                 alt="Marta Syrko" style="max-width: 109px; height: auto;">
-            <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra_logo_black%20(1).png" 
-                 alt="OBRA" style="max-width: 56px; height: auto;">
-          `;
-          
-          const artPlaceholder = document.querySelector('.art-placeholder');
-          if (artPlaceholder) {
-            artPlaceholder.innerHTML = `
-              <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra%20Head_logo_black.png" 
-                   alt="OBRA Art" style="max-width: 123px; height: auto;">
-            `;
-          }
-        }
-      };
-      testImg.src = 'https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra_logo_black%20(1).png';
-    });
-  </script>
+  <!--[if mso | IE]>
+      </td>
+    </tr>
+  </table>
+  <![endif]-->
 </body>
 </html>
