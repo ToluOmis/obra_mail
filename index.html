@@ -141,9 +141,9 @@
                   <td class="mobile-button-container" style="padding:0 0 20px 0!important;">
                     <table cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td style="background-color:#DBB128!important;width:222px!important;height:38px!important;">
+                        <td class="mobile-button-fix" style="background-color:#DBB128!important;width:222px!important;height:38px!important;">
                           <a href="https://n8m7kf9e.forms.app/feedback-hudozhnie-bachennia" 
-                             target="_blank" class="mobile-text-override"
+                             target="_blank" class="mobile-text-override mobile-button-fix"
                              style="display:block!important;width:222px!important;height:38px!important;background-color:#DBB128!important;color:#000000!important;font-family:'OpenSans',Arial,sans-serif!important;font-size:13px!important;font-weight:700!important;text-decoration:none!important;text-align:center!important;line-height:38px!important;text-transform:uppercase!important;letter-spacing:1px!important;">
                             ПРОЙТИ ОПИТУВАННЯ
                           </a>
@@ -174,8 +174,7 @@
                 </tr>
                 <tr>
                   <td class="mobile-font-closing mobile-text-override" style="font-family:'OpenSans',Arial,sans-serif!important;font-size:14px!important;font-weight:700!important;color:#000000!important;line-height:1.4!important;padding:8px 0 25px 0!important;">
-                    <strong style="font-weight:700!important;color:#000000!important;">З теплом,<br>
-                    Марта та команда OBRA</strong>
+                    <strong style="font-weight:700!important;color:#000000!important;"><span class="mobile-hide-br">З теплом,<br>Марта та команда OBRA</span></strong>
                   </td>
                 </tr>
               </table>
@@ -183,7 +182,7 @@
               <!-- Bottom Art Element -->
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td align="center" style="padding:0!important;">
+                  <td align="center" class="mobile-center-logo" style="padding:0!important;text-align:center!important;">
                     <img src="https://raw.githubusercontent.com/ToluOmis/obra_mail/main/Obra%20Head_logo_black.png" 
                          alt="OBRA Art" width="123" height="auto" 
                          style="display:inline-block!important;max-width:123px!important;height:auto!important;border:0!important;outline:none!important;">
@@ -257,15 +256,30 @@
         width: 45px !important;
       }
       
-      /* Force dark theme colors */
+      /* Force dark theme colors - more aggressive approach */
       [data-ogsc] {
         background-color: #698595 !important;
       }
       
-      /* Override dark theme text colors */
-      .mobile-text-override {
+      /* Override dark theme text colors with multiple selectors */
+      .mobile-text-override,
+      .mobile-text-override * {
         color: #000000 !important;
         -webkit-text-fill-color: #000000 !important;
+        text-fill-color: #000000 !important;
+      }
+      
+      /* Force button colors */
+      .mobile-button-fix {
+        background-color: #DBB128 !important;
+        color: #000000 !important;
+      }
+      
+      /* Center logo on mobile */
+      .mobile-center-logo {
+        text-align: center !important;
+        margin: 25px auto 0 auto !important;
+        display: block !important;
       }
     }
     
@@ -274,6 +288,16 @@
       u + .body .mobile-wrapper {
         min-width: 100vw !important;
       }
+      
+      /* Force text colors in Gmail dark mode */
+      [data-ogsc] .mobile-text-override {
+        color: #000000 !important;
+      }
+    }
+    
+    /* Gmail app specific overrides */
+    .gmail-mobile .mobile-text-override {
+      color: #000000 !important;
     }
   </style>
 
